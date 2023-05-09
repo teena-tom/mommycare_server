@@ -6,9 +6,15 @@ const childrenController = require("../controllers/childrenController");
 router.route("/").get(childrenController.getAll);
 
 // get a child by id
-router.route('/:id').get(childrenController.getChild).put(childrenController.updateChild);
-
+router
+  .route("/:id")
+  .get(childrenController.getChild)
+  .put(childrenController.updateChild);
 
 //register new child
 router.route("/").post(childrenController.registerNewChild);
+
+//remove a child
+router.route("/:id").delete(childrenController.removeChild);
+
 module.exports = router;

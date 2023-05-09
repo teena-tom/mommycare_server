@@ -79,3 +79,37 @@ module.exports.registerNewChild = (req, res) => {
     })
     .catch((err) => res.status(500).send("Error: unable to register new child"));
 };
+module.exports.updateChild = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const numUpdates = await db("childdetails").where({ id }).update(req.body);
+    if (numUpdates > 0) {
+      const child = await db("childdetails").where({ id });
+      res.json(child[0]);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+};
+
+//remove an existing child from childdetails table
+
+module.exports.removeChild = (req, res) => {
+  const id = req.params.id;
+  db.select("*").from("mommycare").where("id", "=", id);
+  db("childdetails")
+    .where({ id })
+    .del()
+    .then((data) => {
+      if (data > 0) {
+        res.send("Successfully Removed");
+      } else res.status(404).send("Error in removing child");
+    })
+    .catch((err) => res.status(400).send(`Error in removing child: ${err}`));
+};
+
+
