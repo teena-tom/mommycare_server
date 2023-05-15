@@ -9,13 +9,9 @@ module.exports.getAll = (_req, res) => {
     .then((data) => {
       res.status(200).json(data);
     })
-<<<<<<< HEAD
     .catch((err) =>
       res.status(400).send(`Error retrieving Daycares: ${err}`)
     );
-=======
-    .catch((err) => res.status(400).send(`Error retrieving Daycares: ${err}`));
->>>>>>> feature/routes
 };
 
 //Get  a specific daycare details
@@ -33,8 +29,4 @@ module.exports.getDaycare = (req, res) => {
     .catch((error) => {
       res.status(400).send(`Error retrieving the Daycare: ${err}`);
     });
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> feature/routes
