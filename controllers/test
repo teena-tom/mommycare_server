@@ -1,0 +1,13 @@
+{  "id":"5bf7bd6c-2b16-4129-bddc-9d37gg",
+  "daycare_name":"Delta FunTime",
+  "address":" 11685 93rd Avenue",
+  "city":"Surrey",
+  "contact_name":"Tim",
+  "contact_position":"Care Taker -in charge",
+ "contact_email" :"itstim@yahoo.com",
+"contact_phone" :"7784561256",
+"max_limit_of_children":"8",
+"status":"3",
+"username":"tim",
+"password":"12345"
+}
