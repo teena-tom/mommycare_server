@@ -115,9 +115,10 @@ module.exports.createNew = (req, res) => {
 module.exports.daycareChildren = (req, res) => {
   console.log(req.params.id);
   db("childdetails")
-    .where({ daycare_id: req.params.id })
+    .where({ daycares_id: req.params.id })
     .then((data) => {
       res.status(200).json(data);
+   
     })
     .catch((err) =>
       res.status(400).send(`Error revieving children: ${err}`)
